@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyUI.CustomViews.MenuIconView" 
+             VerticalOptions="Start"
+             HorizontalOptions="Start">
+    <ContentView.Resources>
+        <Style TargetType="BoxView" x:Key="MenuLineStyle">
+            <Setter Property="HeightRequest" Value="3"/>
+            <Setter Property="CornerRadius" Value="3"/>
+            <Setter Property="BackgroundColor" Value="#128ab8"/>
+            <Setter Property="HorizontalOptions" Value="Start"/>
+            <Setter Property="VerticalOptions" Value="Start"/>
+        </Style>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout>
+            <BoxView Style="{x:StaticResource MenuLineStyle}"
+             WidthRequest="37" />
+            <BoxView Style="{x:StaticResource MenuLineStyle}"
+             WidthRequest="29"/>
+            <BoxView Style="{x:StaticResource MenuLineStyle}"
+             WidthRequest="20"/>
+    </StackLayout>
+    </ContentView.Content>
+</ContentView>

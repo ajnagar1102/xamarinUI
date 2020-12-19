@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:MyUI.CustomViews"
+             x:Class="MyUI.MainPage"
+              >
+
+    <Grid>
+        <StackLayout Orientation="Horizontal" Padding="20">
+            <custom:MenuIconView>
+                <custom:MenuIconView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Menu_Tapped"/>
+                </custom:MenuIconView.GestureRecognizers>
+            </custom:MenuIconView>
+        </StackLayout>
+        <custom:MasterMenuView x:Name="menu" IsVisible="False" />
+    </Grid>
+
+</ContentPage>

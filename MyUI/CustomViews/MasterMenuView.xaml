@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       x:Class="MyUI.CustomViews.MasterMenuView"
+       VerticalOptions="Center"  
+       HorizontalOptions="Start"
+       CornerRadius="10"
+       BorderColor="#fafafa" 
+       BackgroundColor="#e6781e"
+       HasShadow="False"
+       Padding="5" Margin="10">
+    <Frame.Resources>
+        <Style TargetType="Image" x:Key="imgStyle">
+            <Setter Property="HeightRequest" Value="30"/>
+            <Setter Property="WidthRequest" Value="30"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+        <Style TargetType="Label" x:Key="lblStyle">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="IsVisible" Value="False"/>
+        </Style>
+        <Style TargetType="StackLayout" x:Key="stackStyle">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="Spacing" Value="15"/>
+            <Setter Property="Padding" Value="30,10"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+        </Style>
+    </Frame.Resources>
+    <Frame.Content>
+        <StackLayout Spacing="12"
+                     VerticalOptions="Center" 
+                     HorizontalOptions="Center" 
+                     Padding="10">
+            <StackLayout.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Right" Swiped="Right_Swiped"/>
+                <SwipeGestureRecognizer Direction="Left" Swiped="Left_Swiped"/>
+            </StackLayout.GestureRecognizers>
+            <!--<Ellipse BackgroundColor="red" 
+                     HeightRequest="150"
+                     WidthRequest="150"
+                     Fill="Yellow"
+                     />-->
+            <Label x:Name="suggetionLbl" Text="Expand Menu" TextColor="White" FontSize="12">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ExpandCollpase_click"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <StackLayout Style="{x:StaticResource stackStyle}">
+                <Image Source="setting.png" Style="{x:StaticResource Key=imgStyle}"/>
+                <Label x:Name="lblSetting" 
+                       Text="Settings"
+                       Style="{x:StaticResource lblStyle}"/>
+            </StackLayout>
+            <StackLayout Style="{x:StaticResource stackStyle}">
+                <Image Source="hospital.png" Style="{x:StaticResource Key=imgStyle}"/>
+                <Label x:Name="lblApp" 
+                       Text="Appartments"
+                       Style="{x:StaticResource lblStyle}"/>
+            </StackLayout>
+            <StackLayout Style="{x:StaticResource stackStyle}">
+                <Image Source="home.png" Style="{x:StaticResource Key=imgStyle}"/>
+                <Label x:Name="lblHome"  
+                       Text="Home"
+                       Style="{x:StaticResource lblStyle}"/>
+            </StackLayout>
+            <StackLayout Style="{x:StaticResource stackStyle}">
+                <Image Source="hospital.png" Style="{x:StaticResource Key=imgStyle}"/>
+                <Label x:Name="lblSchool" Text="Schools"
+                       Style="{x:StaticResource lblStyle}"/>
+            </StackLayout>
+            <StackLayout Style="{x:StaticResource stackStyle}">
+                <Image Source="home.png" Style="{x:StaticResource Key=imgStyle}"/>
+                <Label x:Name="lblFacility" 
+                       Text="faclities"
+                       Style="{x:StaticResource lblStyle}"/>
+            </StackLayout>
+
+        </StackLayout>
+    </Frame.Content>
+</Frame>
